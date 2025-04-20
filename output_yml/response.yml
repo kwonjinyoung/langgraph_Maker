@@ -1,0 +1,40 @@
+name: DigitalWorldExploration
+nodes:
+  - name: start
+  - name: path_choice
+  - name: encounter_guardian
+  - name: puzzle_room
+  - name: hidden_path
+  - name: ai_companion
+  - name: betrayal_check
+  - name: meta_anomaly
+  - name: final_gate
+  - name: end
+edges:
+  - from: __start__
+    to: start
+  - from: start
+    to: path_choice
+  - from: path_choice
+    condition: user_input
+    paths:
+      - encounter_guardian
+      - hidden_path
+      - puzzle_room
+  - from: encounter_guardian
+    to: puzzle_room
+  - from: puzzle_room
+    condition: puzzle_success
+    paths:
+      - hidden_path
+      - puzzle_room
+  - from: hidden_path
+    to: ai_companion
+  - from: ai_companion
+    to: betrayal_check
+  - from: betrayal_check
+    to: meta_anomaly
+  - from: meta_anomaly
+    to: final_gate
+  - from: final_gate
+    to: __end__

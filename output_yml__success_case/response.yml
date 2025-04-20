@@ -1,0 +1,42 @@
+name: EmbassyShadow
+entrypoint: start_briefing
+nodes:
+  - name: start_briefing
+  - name: initial_contact
+  - name: gather_intel
+  - name: public_opinion
+  - name: event_interrupt
+  - name: trade_negotiation
+  - name: internal_pressure
+  - name: alliance_offer
+  - name: emergency_summit
+  - name: resolution
+edges:
+  - from: __start__
+    to: start_briefing
+  - from: start_briefing
+    to: initial_contact
+  - from: initial_contact
+    condition: select_strategy
+    paths:
+      - gather_intel
+      - public_opinion
+  - from: gather_intel
+    to: gather_intel
+  - from: gather_intel
+    to: public_opinion
+  - from: public_opinion
+    to: event_interrupt
+  - from: event_interrupt
+    to: trade_negotiation
+  - from: trade_negotiation
+    condition: trust_level
+    paths:
+      - emergency_summit
+      - internal_pressure
+  - from: internal_pressure
+    to: emergency_summit
+  - from: alliance_offer
+    to: emergency_summit
+  - from: emergency_summit
+    to: resolution
