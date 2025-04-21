@@ -12,5 +12,6 @@ dependencies = [
     "nest-asyncio>=1.6.0",
     "openai>=1.75.0",
     "pydot>=3.0.4",
+    "pygraphviz>=1.14",
     "pyppeteer>=0.0.25",
 ]

@@ -116,10 +116,81 @@ if __name__ == "__main__":
 # 병합: emergency_summit은 여러 루트를 병합해 하나의 상태 판단
 
     query = """
-    
+    프로토스: 건물 및 유닛 활성 조건 요약
+1. 기초 건물 계층
+Nexus (넥서스)
+프로토스의 본진 건물로, 자원 수집과 기본 유닛(Probe)의 생산이 가능하다. 게임 시작 시 제공되며, 모든 건물의 건설은 넥서스에서 생산되는 Probe에 의해 수행된다.
+
+Pylon (파일런)
+프로토스의 에너지 원으로, 건물과 유닛은 Pylon의 전력장 안에 있어야 활성화된다. 어떤 건물이든 건설하려면 해당 위치가 파일런의 범위 안이어야 한다.
+
+Assimilator (어시밀레이터)
+가스를 채취하기 위한 구조물로, 베스핀 가이저 위에 건설되며, 넥서스를 통해 생성된 Probe가 채광 작업을 수행한다.
+
+2. 생산 건물과 유닛 조건
+Gateway (게이트웨이)
+기본적인 전투 유닛 생산 건물로, Zealot 생산이 즉시 가능하다.
+Cybernetics Core가 지어진 후에는 Stalker, Sentry, Adept 생산이 가능하며,
+Twilight Council과 Robotics Facility 등의 기술 건물과 연계해 Archon 같은 상위 유닛 조합도 가능하다.
+
+Warp Gate (워프게이트)
+Gateway를 업그레이드하여 변환 가능한 형태. Cybernetics Core 이후 연구가 가능하며, 유닛을 즉시 원하는 위치에 소환할 수 있는 능력을 가진다.
+
+Robotics Facility (로보틱스 시설)
+기술 유닛 생산 건물로, 건설 즉시 Observer, Warp Prism, Immortal을 생산할 수 있다.
+Robotics Bay가 건설되면 Colossus와 Disruptor 생산이 가능해진다.
+
+Stargate (스타게이트)
+공중 유닛을 생산하는 건물로, 기본적으로 Phoenix, Void Ray, Oracle을 생산할 수 있다.
+Fleet Beacon이 건설되면 Carrier, Tempest, Mothership 등 최종 유닛이 해금된다.
+
+3. 기술 및 지원 건물
+Cybernetics Core (사이버네틱스 코어)
+Gateway 유닛 업그레이드와 고급 유닛 해금에 필수.
+이 건물이 있어야 Gateway에서 Stalker, Sentry, Adept 등 다양한 유닛을 생산 가능.
+
+Twilight Council (황혼회관)
+고급 지상 유닛 업그레이드를 위한 전제조건.
+이 건물 이후 Dark Shrine 또는 Templar Archives를 건설할 수 있으며,
+각각 Dark Templar, High Templar 생성의 필수 조건이 된다.
+
+Templar Archives (템플러 기록관)
+Twilight Council 이후 지을 수 있으며, High Templar 유닛을 생산할 수 있다.
+High Templar는 Archon으로 융합될 수 있다.
+
+Dark Shrine (암흑 성소)
+Twilight Council이 선행되어야 하며, Dark Templar 유닛 생산의 필수 건물이다.
+
+Robotics Bay (로보틱스 지원소)
+Robotics Facility와 연계되며, Colossus 및 Disruptor 생산 조건이 된다.
+
+Fleet Beacon (함대 신호소)
+Stargate 이후 건설할 수 있으며, Carrier, Tempest, Mothership 등의 생산과 업그레이드를 해금한다.
+
+4. 최종 유닛 및 특수 활성 조건 요약
+
+유닛	요구 조건
+Zealot	Gateway
+Stalker	Gateway + Cybernetics Core
+Sentry	Gateway + Cybernetics Core
+Adept	Gateway + Cybernetics Core
+High Templar	Templar Archives
+Dark Templar	Dark Shrine
+Archon	High Templar 2기 또는 Dark Templar 2기 융합
+Immortal	Robotics Facility
+Colossus	Robotics Facility + Robotics Bay
+Disruptor	Robotics Facility + Robotics Bay
+Phoenix	Stargate
+Void Ray	Stargate
+Oracle	Stargate
+Carrier	Stargate + Fleet Beacon
+Tempest	Stargate + Fleet Beacon
+Mothership	Fleet Beacon + Nexus (소환은 단 1기만 가능)
     """
 
-# """
+    query = """
+    hello print and how are you? and end
+    """
 
     response = generate_structured_response(query)
     if response:
