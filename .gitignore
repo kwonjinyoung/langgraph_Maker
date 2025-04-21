@@ -8,3 +8,19 @@ wheels/
 
 # Virtual environments
 .venv
+venv/
+env/
+
+# OpenAI API key and sensitive information
+.env
+
+# Editor settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Generated output folders (optionally exclude or include as needed)
+# output_yml/

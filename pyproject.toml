@@ -1,7 +1,7 @@
 [project]
 name = "langgraph-maker"
 version = "0.1.0"
-description = "Add your description here"
+description = "LangGraph를 이용한 그래프 시각화 도구입니다"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [

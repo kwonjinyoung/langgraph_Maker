@@ -1,47 +1,29 @@
-name: WebServiceUserFlow
-entrypoint: GuestHomepage
+name: ProtossBuildingWorkflow
 nodes:
-  - name: GuestHomepage
-  - name: SignupForm
-  - name: LoginForm
-  - name: AuthenticatedUser
-  - name: ViewBoard
-  - name: ReadPost
-  - name: WritePost
-  - name: EditPost
-  - name: CommentPost
-  - name: UserSettings
-  - name: Logout
-  - name: AdminPanel
-  - name: ModerateContent
+  - name: nexus
+  - name: pylon
+  - name: assimilator
+  - name: gateway
+  - name: cybernetics_core
+  - name: twilight_council
+  - name: robotics_facility
 edges:
   - from: __start__
-    to: GuestHomepage
-  - from: GuestHomepage
-    to: SignupForm
-  - from: GuestHomepage
-    to: LoginForm
-  - from: SignupForm
-    to: AuthenticatedUser
-  - from: LoginForm
-    to: AuthenticatedUser
-  - from: AuthenticatedUser
-    to: ViewBoard
-  - from: ViewBoard
-    to: ReadPost
-  - from: ViewBoard
-    to: WritePost
-  - from: ReadPost
-    to: EditPost
-  - from: ReadPost
-    to: CommentPost
-  - from: AuthenticatedUser
-    to: UserSettings
-  - from: AuthenticatedUser
-    to: Logout
-  - from: AuthenticatedUser
-    to: AdminPanel
-  - from: AdminPanel
-    to: ModerateContent
-  - from: Logout
+    to: nexus
+  - from: nexus
+    to: pylon
+  - from: pylon
+    to: assimilator
+  - from: assimilator
+    to: gateway
+  - from: gateway
+    condition: has_cybernetics_core
+    paths:
+      - cybernetics_core
+      - twilight_council
+  - from: cybernetics_core
+    to: robotics_facility
+  - from: twilight_council
+    to: __end__
+  - from: robotics_facility
     to: __end__

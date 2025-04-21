@@ -7,7 +7,7 @@ Replace the placeholder implementation with your own logic.
 
 from typing_extensions import TypedDict
 
-from response import WebServiceUserFlow
+from response import ProtossBuildingWorkflow
 
 
 class SomeState(TypedDict):
@@ -16,116 +16,74 @@ class SomeState(TypedDict):
 
 
 # Define stand-alone functions
-def GuestHomepage(state: SomeState) -> dict:
-    print("In node: GuestHomepage")
+def nexus(state: SomeState) -> dict:
+    print("In node: nexus")
     return {
         # Add your state update logic here
     }
 
 
-def SignupForm(state: SomeState) -> dict:
-    print("In node: SignupForm")
+def pylon(state: SomeState) -> dict:
+    print("In node: pylon")
     return {
         # Add your state update logic here
     }
 
 
-def LoginForm(state: SomeState) -> dict:
-    print("In node: LoginForm")
+def assimilator(state: SomeState) -> dict:
+    print("In node: assimilator")
     return {
         # Add your state update logic here
     }
 
 
-def AuthenticatedUser(state: SomeState) -> dict:
-    print("In node: AuthenticatedUser")
+def gateway(state: SomeState) -> dict:
+    print("In node: gateway")
     return {
         # Add your state update logic here
     }
 
 
-def ViewBoard(state: SomeState) -> dict:
-    print("In node: ViewBoard")
+def cybernetics_core(state: SomeState) -> dict:
+    print("In node: cybernetics_core")
     return {
         # Add your state update logic here
     }
 
 
-def ReadPost(state: SomeState) -> dict:
-    print("In node: ReadPost")
+def twilight_council(state: SomeState) -> dict:
+    print("In node: twilight_council")
     return {
         # Add your state update logic here
     }
 
 
-def WritePost(state: SomeState) -> dict:
-    print("In node: WritePost")
+def robotics_facility(state: SomeState) -> dict:
+    print("In node: robotics_facility")
     return {
         # Add your state update logic here
     }
 
 
-def EditPost(state: SomeState) -> dict:
-    print("In node: EditPost")
-    return {
-        # Add your state update logic here
-    }
+def has_cybernetics_core(state: SomeState) -> str:
+    print("In condition: has_cybernetics_core")
+    pass
 
 
-def CommentPost(state: SomeState) -> dict:
-    print("In node: CommentPost")
-    return {
-        # Add your state update logic here
-    }
-
-
-def UserSettings(state: SomeState) -> dict:
-    print("In node: UserSettings")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Logout(state: SomeState) -> dict:
-    print("In node: Logout")
-    return {
-        # Add your state update logic here
-    }
-
-
-def AdminPanel(state: SomeState) -> dict:
-    print("In node: AdminPanel")
-    return {
-        # Add your state update logic here
-    }
-
-
-def ModerateContent(state: SomeState) -> dict:
-    print("In node: ModerateContent")
-    return {
-        # Add your state update logic here
-    }
-
-
-agent = WebServiceUserFlow(
+agent = ProtossBuildingWorkflow(
     state_schema=SomeState,
     impl=[
-        ("GuestHomepage", GuestHomepage),
-        ("SignupForm", SignupForm),
-        ("LoginForm", LoginForm),
-        ("AuthenticatedUser", AuthenticatedUser),
-        ("ViewBoard", ViewBoard),
-        ("ReadPost", ReadPost),
-        ("WritePost", WritePost),
-        ("EditPost", EditPost),
-        ("CommentPost", CommentPost),
-        ("UserSettings", UserSettings),
-        ("Logout", Logout),
-        ("AdminPanel", AdminPanel),
-        ("ModerateContent", ModerateContent),
+        ("nexus", nexus),
+        ("pylon", pylon),
+        ("assimilator", assimilator),
+        ("gateway", gateway),
+        ("cybernetics_core", cybernetics_core),
+        ("twilight_council", twilight_council),
+        ("robotics_facility", robotics_facility),
+        ("has_cybernetics_core", has_cybernetics_core),
     ],
 )
 
 compiled_agent = agent.compile()
 
-print(compiled_agent.invoke({"foo": "bar"}))
+#print(compiled_agent.invoke({"foo": "bar"}))
