@@ -7,7 +7,7 @@ Replace the placeholder implementation with your own logic.
 
 from typing_extensions import TypedDict
 
-from response import ProtossBuildingUnitActivation
+from response import WebServiceUserFlow
 
 
 class SomeState(TypedDict):
@@ -16,241 +16,113 @@ class SomeState(TypedDict):
 
 
 # Define stand-alone functions
-def Nexus(state: SomeState) -> dict:
-    print("In node: Nexus")
+def GuestHomepage(state: SomeState) -> dict:
+    print("In node: GuestHomepage")
     return {
         # Add your state update logic here
     }
 
 
-def Pylon(state: SomeState) -> dict:
-    print("In node: Pylon")
+def SignupForm(state: SomeState) -> dict:
+    print("In node: SignupForm")
     return {
         # Add your state update logic here
     }
 
 
-def Assimilator(state: SomeState) -> dict:
-    print("In node: Assimilator")
+def LoginForm(state: SomeState) -> dict:
+    print("In node: LoginForm")
     return {
         # Add your state update logic here
     }
 
 
-def Gateway(state: SomeState) -> dict:
-    print("In node: Gateway")
+def AuthenticatedUser(state: SomeState) -> dict:
+    print("In node: AuthenticatedUser")
     return {
         # Add your state update logic here
     }
 
 
-def Cybernetics_Core(state: SomeState) -> dict:
-    print("In node: Cybernetics Core")
+def ViewBoard(state: SomeState) -> dict:
+    print("In node: ViewBoard")
     return {
         # Add your state update logic here
     }
 
 
-def Warp_Gate(state: SomeState) -> dict:
-    print("In node: Warp Gate")
+def ReadPost(state: SomeState) -> dict:
+    print("In node: ReadPost")
     return {
         # Add your state update logic here
     }
 
 
-def Robotics_Facility(state: SomeState) -> dict:
-    print("In node: Robotics Facility")
+def WritePost(state: SomeState) -> dict:
+    print("In node: WritePost")
     return {
         # Add your state update logic here
     }
 
 
-def Robotics_Bay(state: SomeState) -> dict:
-    print("In node: Robotics Bay")
+def EditPost(state: SomeState) -> dict:
+    print("In node: EditPost")
     return {
         # Add your state update logic here
     }
 
 
-def Stargate(state: SomeState) -> dict:
-    print("In node: Stargate")
+def CommentPost(state: SomeState) -> dict:
+    print("In node: CommentPost")
     return {
         # Add your state update logic here
     }
 
 
-def Fleet_Beacon(state: SomeState) -> dict:
-    print("In node: Fleet Beacon")
+def UserSettings(state: SomeState) -> dict:
+    print("In node: UserSettings")
     return {
         # Add your state update logic here
     }
 
 
-def Twilight_Council(state: SomeState) -> dict:
-    print("In node: Twilight Council")
+def Logout(state: SomeState) -> dict:
+    print("In node: Logout")
     return {
         # Add your state update logic here
     }
 
 
-def Templar_Archives(state: SomeState) -> dict:
-    print("In node: Templar Archives")
+def AdminPanel(state: SomeState) -> dict:
+    print("In node: AdminPanel")
     return {
         # Add your state update logic here
     }
 
 
-def Dark_Shrine(state: SomeState) -> dict:
-    print("In node: Dark Shrine")
+def ModerateContent(state: SomeState) -> dict:
+    print("In node: ModerateContent")
     return {
         # Add your state update logic here
     }
 
 
-def Zealot(state: SomeState) -> dict:
-    print("In node: Zealot")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Stalker(state: SomeState) -> dict:
-    print("In node: Stalker")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Sentry(state: SomeState) -> dict:
-    print("In node: Sentry")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Adept(state: SomeState) -> dict:
-    print("In node: Adept")
-    return {
-        # Add your state update logic here
-    }
-
-
-def High_Templar(state: SomeState) -> dict:
-    print("In node: High Templar")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Dark_Templar(state: SomeState) -> dict:
-    print("In node: Dark Templar")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Archon(state: SomeState) -> dict:
-    print("In node: Archon")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Immortal(state: SomeState) -> dict:
-    print("In node: Immortal")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Colossus(state: SomeState) -> dict:
-    print("In node: Colossus")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Disruptor(state: SomeState) -> dict:
-    print("In node: Disruptor")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Phoenix(state: SomeState) -> dict:
-    print("In node: Phoenix")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Void_Ray(state: SomeState) -> dict:
-    print("In node: Void Ray")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Oracle(state: SomeState) -> dict:
-    print("In node: Oracle")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Carrier(state: SomeState) -> dict:
-    print("In node: Carrier")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Tempest(state: SomeState) -> dict:
-    print("In node: Tempest")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Mothership(state: SomeState) -> dict:
-    print("In node: Mothership")
-    return {
-        # Add your state update logic here
-    }
-
-
-agent = ProtossBuildingUnitActivation(
+agent = WebServiceUserFlow(
     state_schema=SomeState,
     impl=[
-        ("Nexus", Nexus),
-        ("Pylon", Pylon),
-        ("Assimilator", Assimilator),
-        ("Gateway", Gateway),
-        ("Cybernetics_Core", Cybernetics_Core),
-        ("Warp_Gate", Warp_Gate),
-        ("Robotics_Facility", Robotics_Facility),
-        ("Robotics_Bay", Robotics_Bay),
-        ("Stargate", Stargate),
-        ("Fleet_Beacon", Fleet_Beacon),
-        ("Twilight_Council", Twilight_Council),
-        ("Templar_Archives", Templar_Archives),
-        ("Dark_Shrine", Dark_Shrine),
-        ("Zealot", Zealot),
-        ("Stalker", Stalker),
-        ("Sentry", Sentry),
-        ("Adept", Adept),
-        ("High_Templar", High_Templar),
-        ("Dark_Templar", Dark_Templar),
-        ("Archon", Archon),
-        ("Immortal", Immortal),
-        ("Colossus", Colossus),
-        ("Disruptor", Disruptor),
-        ("Phoenix", Phoenix),
-        ("Void_Ray", Void_Ray),
-        ("Oracle", Oracle),
-        ("Carrier", Carrier),
-        ("Tempest", Tempest),
-        ("Mothership", Mothership),
+        ("GuestHomepage", GuestHomepage),
+        ("SignupForm", SignupForm),
+        ("LoginForm", LoginForm),
+        ("AuthenticatedUser", AuthenticatedUser),
+        ("ViewBoard", ViewBoard),
+        ("ReadPost", ReadPost),
+        ("WritePost", WritePost),
+        ("EditPost", EditPost),
+        ("CommentPost", CommentPost),
+        ("UserSettings", UserSettings),
+        ("Logout", Logout),
+        ("AdminPanel", AdminPanel),
+        ("ModerateContent", ModerateContent),
     ],
 )
 

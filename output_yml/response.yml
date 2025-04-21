@@ -1,88 +1,47 @@
-name: ProtossBuildingUnitActivation
+name: WebServiceUserFlow
+entrypoint: GuestHomepage
 nodes:
-  - name: Nexus
-  - name: Pylon
-  - name: Assimilator
-  - name: Gateway
-  - name: Cybernetics Core
-  - name: Warp Gate
-  - name: Robotics Facility
-  - name: Robotics Bay
-  - name: Stargate
-  - name: Fleet Beacon
-  - name: Twilight Council
-  - name: Templar Archives
-  - name: Dark Shrine
-  - name: Zealot
-  - name: Stalker
-  - name: Sentry
-  - name: Adept
-  - name: High Templar
-  - name: Dark Templar
-  - name: Archon
-  - name: Immortal
-  - name: Colossus
-  - name: Disruptor
-  - name: Phoenix
-  - name: Void Ray
-  - name: Oracle
-  - name: Carrier
-  - name: Tempest
-  - name: Mothership
+  - name: GuestHomepage
+  - name: SignupForm
+  - name: LoginForm
+  - name: AuthenticatedUser
+  - name: ViewBoard
+  - name: ReadPost
+  - name: WritePost
+  - name: EditPost
+  - name: CommentPost
+  - name: UserSettings
+  - name: Logout
+  - name: AdminPanel
+  - name: ModerateContent
 edges:
   - from: __start__
-    to: Nexus
-  - from: Nexus
-    to: Pylon
-  - from: Pylon
-    to: Gateway
-  - from: Gateway
-    to: Zealot
-  - from: Gateway
-    to: Cybernetics Core
-  - from: Cybernetics Core
-    to: Stalker
-  - from: Cybernetics Core
-    to: Sentry
-  - from: Cybernetics Core
-    to: Adept
-  - from: Gateway
-    to: Warp Gate
-  - from: Warp Gate
-    to: Zealot
-  - from: Robotics Facility
-    to: Immortal
-  - from: Robotics Facility
-    to: Robotics Bay
-  - from: Robotics Bay
-    to: Colossus
-  - from: Robotics Bay
-    to: Disruptor
-  - from: Stargate
-    to: Phoenix
-  - from: Stargate
-    to: Void Ray
-  - from: Stargate
-    to: Oracle
-  - from: Stargate
-    to: Fleet Beacon
-  - from: Fleet Beacon
-    to: Carrier
-  - from: Fleet Beacon
-    to: Tempest
-  - from: Fleet Beacon
-    to: Mothership
-  - from: Twilight Council
-    to: Templar Archives
-  - from: Twilight Council
-    to: Dark Shrine
-  - from: Templar Archives
-    to: High Templar
-  - from: Dark Shrine
-    to: Dark Templar
-  - from: High Templar
-    to: Archon
-  - from: Dark Templar
-    to: Archon
-  - from: Archon
+    to: GuestHomepage
+  - from: GuestHomepage
+    to: SignupForm
+  - from: GuestHomepage
+    to: LoginForm
+  - from: SignupForm
+    to: AuthenticatedUser
+  - from: LoginForm
+    to: AuthenticatedUser
+  - from: AuthenticatedUser
+    to: ViewBoard
+  - from: ViewBoard
+    to: ReadPost
+  - from: ViewBoard
+    to: WritePost
+  - from: ReadPost
+    to: EditPost
+  - from: ReadPost
+    to: CommentPost
+  - from: AuthenticatedUser
+    to: UserSettings
+  - from: AuthenticatedUser
+    to: Logout
+  - from: AuthenticatedUser
+    to: AdminPanel
+  - from: AdminPanel
+    to: ModerateContent
+  - from: Logout
     to: __end__

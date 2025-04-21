@@ -1,9 +1,16 @@
-주어진 정보를 바탕으로, 프로토스의 건물과 유닛 활성 조건을 LangGraph의 그래프 모델로 변환하기 위해서는 각 건물과 유닛을 노드로 정의하고, 그들 간의 활성화 조건과 종속 관계를 엣지로 연결해야 합니다.
+LangGraph 구조로 웹 서비스의 사용자 흐름과 시스템 상태를 모델링하기 위해서는 각 상태를 노드로 정의하고, 노드 간의 전이 조건을 명확히 설정하는 것이 중요합니다. 여기서 주어진 시나리오를 LangGraph로 표현하기 위해서는 다음과 같은 단계가 필요합니다.
 
-먼저 상태를 정의하고, 각 노드가 상태를 어떻게 변화시키는지 고려합니다. 예를 들어, `Nexus`는 기본적으로 게임 시작 시 제공되므로 `START`에서 바로 연결될 수 있습니다. `Pylon`은 모든 건물의 전제 조건이므로, `Nexus`에서 `Pylon`으로의 엣지를 추가합니다.
+1. **상태 정의**: 
+   - 사용자 흐름에서 필요한 상태를 노드로 정의합니다. 예를 들어, `GuestHomepage`, `SignupForm`, `LoginForm`, `AuthenticatedUser` 등과 같은 상태를 노드로 정의합니다.
 
-유닛 생산 건물과 관련해서는, `Gateway`는 `Zealot`을 즉시 생산할 수 있는 조건을 가집니다. 따라서 `Gateway` 노드는 `Zealot` 생산을 위한 엣지를 가집니다. `Cybernetics Core`가 지어지면 `Stalker`, `Sentry`, `Adept`를 생산할 수 있게 되므로, `Gateway`에서 `Cybernetics Core`로, 그리고 `Cybernetics Core`에서 해당 유닛들로의 엣지를 추가합니다.
+2. **노드 정의**:
+   - 각 노드는 특정 기능을 수행하는 Python 함수로 정의됩니다. 예를 들어, `SignupForm` 노드는 사용자가 입력한 정보를 검증하고, DB에 저장하는 작업을 수행합니다.
 
-`Robotics Facility`와 `Stargate`는 각각 `Observer`, `Warp Prism`, `Immortal` 및 `Phoenix`, `Void Ray`, `Oracle` 생산을 위한 조건을 제공합니다. `Robotics Bay`와 `Fleet Beacon`은 상위 유닛인 `Colossus`, `Disruptor`, `Carrier`, `Tempest`, `Mothership`의 생산 조건을 제공하므로 이들 간의 관계를 엣지로 연결해야 합니다.
+3. **엣지 정의**:
+   - 노드 간의 전이를 정의합니다. 이는 사용자의 행동에 따라 다음으로 이동할 상태를 결정하는 로직입니다. 예를 들어, `SignupForm` 노드에서 사용자가 성공적으로 가입하면 `AuthenticatedUser`로 전이됩니다.
 
-이제 이 조건들을 바탕으로 YML 파일을 작성합니다.
+4. **에이전트 역할 분리**:
+   - 각 에이전트의 역할을 명확히 정의합니다. 이 시나리오에서는 `UserAgent`, `SystemAgent`, `BoardAgent`, `AdminAgent`로 구분됩니다.
+
+5. **LangGraph YAML 작성**:
+   - 위의 요소들을 종합하여 LangGraph YAML 파일을 작성합니다. 이는 그래프의 구조와 흐름을 명시적으로 나타냅니다.

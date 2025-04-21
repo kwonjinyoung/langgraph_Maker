@@ -13,248 +13,120 @@ Below is a sample implementation of the generated stub:
 ```python
 from typing_extensions import TypedDict
 
-from response import ProtossBuildingUnitActivation
+from response import WebServiceUserFlow
 
 class SomeState(TypedDict):
     # define your attributes here
     foo: str
 
 # Define stand-alone functions
-def Nexus(state: SomeState) -> dict:
-    print("In node: Nexus")
+def GuestHomepage(state: SomeState) -> dict:
+    print("In node: GuestHomepage")
     return {
         # Add your state update logic here
     }
 
 
-def Pylon(state: SomeState) -> dict:
-    print("In node: Pylon")
+def SignupForm(state: SomeState) -> dict:
+    print("In node: SignupForm")
     return {
         # Add your state update logic here
     }
 
 
-def Assimilator(state: SomeState) -> dict:
-    print("In node: Assimilator")
+def LoginForm(state: SomeState) -> dict:
+    print("In node: LoginForm")
     return {
         # Add your state update logic here
     }
 
 
-def Gateway(state: SomeState) -> dict:
-    print("In node: Gateway")
+def AuthenticatedUser(state: SomeState) -> dict:
+    print("In node: AuthenticatedUser")
     return {
         # Add your state update logic here
     }
 
 
-def Cybernetics_Core(state: SomeState) -> dict:
-    print("In node: Cybernetics Core")
+def ViewBoard(state: SomeState) -> dict:
+    print("In node: ViewBoard")
     return {
         # Add your state update logic here
     }
 
 
-def Warp_Gate(state: SomeState) -> dict:
-    print("In node: Warp Gate")
+def ReadPost(state: SomeState) -> dict:
+    print("In node: ReadPost")
     return {
         # Add your state update logic here
     }
 
 
-def Robotics_Facility(state: SomeState) -> dict:
-    print("In node: Robotics Facility")
+def WritePost(state: SomeState) -> dict:
+    print("In node: WritePost")
     return {
         # Add your state update logic here
     }
 
 
-def Robotics_Bay(state: SomeState) -> dict:
-    print("In node: Robotics Bay")
+def EditPost(state: SomeState) -> dict:
+    print("In node: EditPost")
     return {
         # Add your state update logic here
     }
 
 
-def Stargate(state: SomeState) -> dict:
-    print("In node: Stargate")
+def CommentPost(state: SomeState) -> dict:
+    print("In node: CommentPost")
     return {
         # Add your state update logic here
     }
 
 
-def Fleet_Beacon(state: SomeState) -> dict:
-    print("In node: Fleet Beacon")
+def UserSettings(state: SomeState) -> dict:
+    print("In node: UserSettings")
     return {
         # Add your state update logic here
     }
 
 
-def Twilight_Council(state: SomeState) -> dict:
-    print("In node: Twilight Council")
+def Logout(state: SomeState) -> dict:
+    print("In node: Logout")
     return {
         # Add your state update logic here
     }
 
 
-def Templar_Archives(state: SomeState) -> dict:
-    print("In node: Templar Archives")
+def AdminPanel(state: SomeState) -> dict:
+    print("In node: AdminPanel")
     return {
         # Add your state update logic here
     }
 
 
-def Dark_Shrine(state: SomeState) -> dict:
-    print("In node: Dark Shrine")
+def ModerateContent(state: SomeState) -> dict:
+    print("In node: ModerateContent")
     return {
         # Add your state update logic here
     }
 
 
-def Zealot(state: SomeState) -> dict:
-    print("In node: Zealot")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Stalker(state: SomeState) -> dict:
-    print("In node: Stalker")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Sentry(state: SomeState) -> dict:
-    print("In node: Sentry")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Adept(state: SomeState) -> dict:
-    print("In node: Adept")
-    return {
-        # Add your state update logic here
-    }
-
-
-def High_Templar(state: SomeState) -> dict:
-    print("In node: High Templar")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Dark_Templar(state: SomeState) -> dict:
-    print("In node: Dark Templar")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Archon(state: SomeState) -> dict:
-    print("In node: Archon")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Immortal(state: SomeState) -> dict:
-    print("In node: Immortal")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Colossus(state: SomeState) -> dict:
-    print("In node: Colossus")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Disruptor(state: SomeState) -> dict:
-    print("In node: Disruptor")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Phoenix(state: SomeState) -> dict:
-    print("In node: Phoenix")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Void_Ray(state: SomeState) -> dict:
-    print("In node: Void Ray")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Oracle(state: SomeState) -> dict:
-    print("In node: Oracle")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Carrier(state: SomeState) -> dict:
-    print("In node: Carrier")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Tempest(state: SomeState) -> dict:
-    print("In node: Tempest")
-    return {
-        # Add your state update logic here
-    }
-
-
-def Mothership(state: SomeState) -> dict:
-    print("In node: Mothership")
-    return {
-        # Add your state update logic here
-    }
-
-
-agent = ProtossBuildingUnitActivation(
+agent = WebServiceUserFlow(
     state_schema=SomeState,
     impl=[
-        ("Nexus", Nexus),
-        ("Pylon", Pylon),
-        ("Assimilator", Assimilator),
-        ("Gateway", Gateway),
-        ("Cybernetics Core", Cybernetics_Core),
-        ("Warp Gate", Warp_Gate),
-        ("Robotics Facility", Robotics_Facility),
-        ("Robotics Bay", Robotics_Bay),
-        ("Stargate", Stargate),
-        ("Fleet Beacon", Fleet_Beacon),
-        ("Twilight Council", Twilight_Council),
-        ("Templar Archives", Templar_Archives),
-        ("Dark Shrine", Dark_Shrine),
-        ("Zealot", Zealot),
-        ("Stalker", Stalker),
-        ("Sentry", Sentry),
-        ("Adept", Adept),
-        ("High Templar", High_Templar),
-        ("Dark Templar", Dark_Templar),
-        ("Archon", Archon),
-        ("Immortal", Immortal),
-        ("Colossus", Colossus),
-        ("Disruptor", Disruptor),
-        ("Phoenix", Phoenix),
-        ("Void Ray", Void_Ray),
-        ("Oracle", Oracle),
-        ("Carrier", Carrier),
-        ("Tempest", Tempest),
-        ("Mothership", Mothership),
+        ("GuestHomepage", GuestHomepage),
+        ("SignupForm", SignupForm),
+        ("LoginForm", LoginForm),
+        ("AuthenticatedUser", AuthenticatedUser),
+        ("ViewBoard", ViewBoard),
+        ("ReadPost", ReadPost),
+        ("WritePost", WritePost),
+        ("EditPost", EditPost),
+        ("CommentPost", CommentPost),
+        ("UserSettings", UserSettings),
+        ("Logout", Logout),
+        ("AdminPanel", AdminPanel),
+        ("ModerateContent", ModerateContent),
     ]
 )
 
@@ -269,7 +141,7 @@ from langgraph.constants import START, END  # noqa: F401
 from langgraph.graph import StateGraph
 
 
-def ProtossBuildingUnitActivation(
+def WebServiceUserFlow(
     *,
     state_schema: Optional[Type[Any]] = None,
     config_schema: Optional[Type[Any]] = None,
@@ -277,7 +149,7 @@ def ProtossBuildingUnitActivation(
     output: Optional[Type[Any]] = None,
     impl: list[tuple[str, Callable]],
 ) -> StateGraph:
-    """Create the state graph for ProtossBuildingUnitActivation."""
+    """Create the state graph for WebServiceUserFlow."""
     # Declare the state graph
     builder = StateGraph(
         state_schema, config_schema=config_schema, input=input, output=output
@@ -288,35 +160,19 @@ def ProtossBuildingUnitActivation(
     all_names = set(nodes_by_name)
 
     expected_implementations = {
-        "Nexus",
-        "Pylon",
-        "Assimilator",
-        "Gateway",
-        "Cybernetics_Core",
-        "Warp_Gate",
-        "Robotics_Facility",
-        "Robotics_Bay",
-        "Stargate",
-        "Fleet_Beacon",
-        "Twilight_Council",
-        "Templar_Archives",
-        "Dark_Shrine",
-        "Zealot",
-        "Stalker",
-        "Sentry",
-        "Adept",
-        "High_Templar",
-        "Dark_Templar",
-        "Archon",
-        "Immortal",
-        "Colossus",
-        "Disruptor",
-        "Phoenix",
-        "Void_Ray",
-        "Oracle",
-        "Carrier",
-        "Tempest",
-        "Mothership",
+        "GuestHomepage",
+        "SignupForm",
+        "LoginForm",
+        "AuthenticatedUser",
+        "ViewBoard",
+        "ReadPost",
+        "WritePost",
+        "EditPost",
+        "CommentPost",
+        "UserSettings",
+        "Logout",
+        "AdminPanel",
+        "ModerateContent",
     }
 
     missing_nodes = expected_implementations - all_names
@@ -331,63 +187,35 @@ def ProtossBuildingUnitActivation(
         )
 
     # Add nodes
-    builder.add_node("Nexus", nodes_by_name["Nexus"])
-    builder.add_node("Pylon", nodes_by_name["Pylon"])
-    builder.add_node("Assimilator", nodes_by_name["Assimilator"])
-    builder.add_node("Gateway", nodes_by_name["Gateway"])
-    builder.add_node("Cybernetics Core", nodes_by_name["Cybernetics_Core"])
-    builder.add_node("Warp Gate", nodes_by_name["Warp_Gate"])
-    builder.add_node("Robotics Facility", nodes_by_name["Robotics_Facility"])
-    builder.add_node("Robotics Bay", nodes_by_name["Robotics_Bay"])
-    builder.add_node("Stargate", nodes_by_name["Stargate"])
-    builder.add_node("Fleet Beacon", nodes_by_name["Fleet_Beacon"])
-    builder.add_node("Twilight Council", nodes_by_name["Twilight_Council"])
-    builder.add_node("Templar Archives", nodes_by_name["Templar_Archives"])
-    builder.add_node("Dark Shrine", nodes_by_name["Dark_Shrine"])
-    builder.add_node("Zealot", nodes_by_name["Zealot"])
-    builder.add_node("Stalker", nodes_by_name["Stalker"])
-    builder.add_node("Sentry", nodes_by_name["Sentry"])
-    builder.add_node("Adept", nodes_by_name["Adept"])
-    builder.add_node("High Templar", nodes_by_name["High_Templar"])
-    builder.add_node("Dark Templar", nodes_by_name["Dark_Templar"])
-    builder.add_node("Archon", nodes_by_name["Archon"])
-    builder.add_node("Immortal", nodes_by_name["Immortal"])
-    builder.add_node("Colossus", nodes_by_name["Colossus"])
-    builder.add_node("Disruptor", nodes_by_name["Disruptor"])
-    builder.add_node("Phoenix", nodes_by_name["Phoenix"])
-    builder.add_node("Void Ray", nodes_by_name["Void_Ray"])
-    builder.add_node("Oracle", nodes_by_name["Oracle"])
-    builder.add_node("Carrier", nodes_by_name["Carrier"])
-    builder.add_node("Tempest", nodes_by_name["Tempest"])
-    builder.add_node("Mothership", nodes_by_name["Mothership"])
+    builder.add_node("GuestHomepage", nodes_by_name["GuestHomepage"])
+    builder.add_node("SignupForm", nodes_by_name["SignupForm"])
+    builder.add_node("LoginForm", nodes_by_name["LoginForm"])
+    builder.add_node("AuthenticatedUser", nodes_by_name["AuthenticatedUser"])
+    builder.add_node("ViewBoard", nodes_by_name["ViewBoard"])
+    builder.add_node("ReadPost", nodes_by_name["ReadPost"])
+    builder.add_node("WritePost", nodes_by_name["WritePost"])
+    builder.add_node("EditPost", nodes_by_name["EditPost"])
+    builder.add_node("CommentPost", nodes_by_name["CommentPost"])
+    builder.add_node("UserSettings", nodes_by_name["UserSettings"])
+    builder.add_node("Logout", nodes_by_name["Logout"])
+    builder.add_node("AdminPanel", nodes_by_name["AdminPanel"])
+    builder.add_node("ModerateContent", nodes_by_name["ModerateContent"])
 
     # Add edges
-    builder.add_edge(START, "Nexus")
-    builder.add_edge("Nexus", "Pylon")
-    builder.add_edge("Pylon", "Gateway")
-    builder.add_edge("Gateway", "Zealot")
-    builder.add_edge("Gateway", "Cybernetics Core")
-    builder.add_edge("Cybernetics Core", "Stalker")
-    builder.add_edge("Cybernetics Core", "Sentry")
-    builder.add_edge("Cybernetics Core", "Adept")
-    builder.add_edge("Gateway", "Warp Gate")
-    builder.add_edge("Warp Gate", "Zealot")
-    builder.add_edge("Robotics Facility", "Immortal")
-    builder.add_edge("Robotics Facility", "Robotics Bay")
-    builder.add_edge("Robotics Bay", "Colossus")
-    builder.add_edge("Robotics Bay", "Disruptor")
-    builder.add_edge("Stargate", "Phoenix")
-    builder.add_edge("Stargate", "Void Ray")
-    builder.add_edge("Stargate", "Oracle")
-    builder.add_edge("Stargate", "Fleet Beacon")
-    builder.add_edge("Fleet Beacon", "Carrier")
-    builder.add_edge("Fleet Beacon", "Tempest")
-    builder.add_edge("Fleet Beacon", "Mothership")
-    builder.add_edge("Twilight Council", "Templar Archives")
-    builder.add_edge("Twilight Council", "Dark Shrine")
-    builder.add_edge("Templar Archives", "High Templar")
-    builder.add_edge("Dark Shrine", "Dark Templar")
-    builder.add_edge("High Templar", "Archon")
-    builder.add_edge("Dark Templar", "Archon")
-    builder.add_edge("Archon", END)
+    builder.add_edge(START, "GuestHomepage")
+    builder.add_edge("GuestHomepage", "SignupForm")
+    builder.add_edge("GuestHomepage", "LoginForm")
+    builder.add_edge("SignupForm", "AuthenticatedUser")
+    builder.add_edge("LoginForm", "AuthenticatedUser")
+    builder.add_edge("AuthenticatedUser", "ViewBoard")
+    builder.add_edge("ViewBoard", "ReadPost")
+    builder.add_edge("ViewBoard", "WritePost")
+    builder.add_edge("ReadPost", "EditPost")
+    builder.add_edge("ReadPost", "CommentPost")
+    builder.add_edge("AuthenticatedUser", "UserSettings")
+    builder.add_edge("AuthenticatedUser", "Logout")
+    builder.add_edge("AuthenticatedUser", "AdminPanel")
+    builder.add_edge("AdminPanel", "ModerateContent")
+    builder.add_edge("Logout", END)
+    builder.set_entry_point("GuestHomepage")
     return builder

@@ -16,7 +16,25 @@ uv add pygraphviz
 
 ## 사용 방법
 
-그래프 시각화를 위해 다음 스크립트를 실행하세요:
+### 그래프 생성
+
+다음 명령어로 그래프를 생성할 수 있습니다:
+
+```bash
+uv run python main.py
+```
+
+실행 결과:
+```
+===== 생성 결과 =====
+✅ Successfully generated files:
+📄 Stub file:           output_yml/response.py
+🔧 Implementation file:  output_yml/response_impl.py
+```
+
+### 그래프 시각화
+
+생성된 그래프를 시각화하려면 다음 명령어를 실행하세요:
 
 ```bash
 python output_yml/makeImage.py
