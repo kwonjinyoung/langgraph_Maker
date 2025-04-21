@@ -13,108 +13,184 @@ Below is a sample implementation of the generated stub:
 ```python
 from typing_extensions import TypedDict
 
-from response import DigitalWorldExploration
+from response import TerranTechTree
 
 class SomeState(TypedDict):
     # define your attributes here
     foo: str
 
 # Define stand-alone functions
-def start(state: SomeState) -> dict:
-    print("In node: start")
+def CommandCenter(state: SomeState) -> dict:
+    print("In node: CommandCenter")
     return {
         # Add your state update logic here
     }
 
 
-def path_choice(state: SomeState) -> dict:
-    print("In node: path_choice")
+def SupplyDepot(state: SomeState) -> dict:
+    print("In node: SupplyDepot")
     return {
         # Add your state update logic here
     }
 
 
-def encounter_guardian(state: SomeState) -> dict:
-    print("In node: encounter_guardian")
+def Refinery(state: SomeState) -> dict:
+    print("In node: Refinery")
     return {
         # Add your state update logic here
     }
 
 
-def puzzle_room(state: SomeState) -> dict:
-    print("In node: puzzle_room")
+def Barracks(state: SomeState) -> dict:
+    print("In node: Barracks")
     return {
         # Add your state update logic here
     }
 
 
-def hidden_path(state: SomeState) -> dict:
-    print("In node: hidden_path")
+def EngineeringBay(state: SomeState) -> dict:
+    print("In node: EngineeringBay")
     return {
         # Add your state update logic here
     }
 
 
-def ai_companion(state: SomeState) -> dict:
-    print("In node: ai_companion")
+def Academy(state: SomeState) -> dict:
+    print("In node: Academy")
     return {
         # Add your state update logic here
     }
 
 
-def betrayal_check(state: SomeState) -> dict:
-    print("In node: betrayal_check")
+def Factory(state: SomeState) -> dict:
+    print("In node: Factory")
     return {
         # Add your state update logic here
     }
 
 
-def meta_anomaly(state: SomeState) -> dict:
-    print("In node: meta_anomaly")
+def Armory(state: SomeState) -> dict:
+    print("In node: Armory")
     return {
         # Add your state update logic here
     }
 
 
-def final_gate(state: SomeState) -> dict:
-    print("In node: final_gate")
+def Starport(state: SomeState) -> dict:
+    print("In node: Starport")
     return {
         # Add your state update logic here
     }
 
 
-def end(state: SomeState) -> dict:
-    print("In node: end")
+def ScienceFacility(state: SomeState) -> dict:
+    print("In node: ScienceFacility")
     return {
         # Add your state update logic here
     }
 
 
-def user_input(state: SomeState) -> str:
-    print("In condition: user_input")
-    raise NotImplementedError("Implement me.")
+def FusionCore(state: SomeState) -> dict:
+    print("In node: FusionCore")
+    return {
+        # Add your state update logic here
+    }
 
 
-def puzzle_success(state: SomeState) -> str:
-    print("In condition: puzzle_success")
-    raise NotImplementedError("Implement me.")
+def GhostAcademy(state: SomeState) -> dict:
+    print("In node: GhostAcademy")
+    return {
+        # Add your state update logic here
+    }
 
 
-agent = DigitalWorldExploration(
+def Bunker(state: SomeState) -> dict:
+    print("In node: Bunker")
+    return {
+        # Add your state update logic here
+    }
+
+
+def MissileTurret(state: SomeState) -> dict:
+    print("In node: MissileTurret")
+    return {
+        # Add your state update logic here
+    }
+
+
+def SensorTower(state: SomeState) -> dict:
+    print("In node: SensorTower")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabBarracks(state: SomeState) -> dict:
+    print("In node: TechLabBarracks")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorBarracks(state: SomeState) -> dict:
+    print("In node: ReactorBarracks")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabFactory(state: SomeState) -> dict:
+    print("In node: TechLabFactory")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorFactory(state: SomeState) -> dict:
+    print("In node: ReactorFactory")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabStarport(state: SomeState) -> dict:
+    print("In node: TechLabStarport")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorStarport(state: SomeState) -> dict:
+    print("In node: ReactorStarport")
+    return {
+        # Add your state update logic here
+    }
+
+
+agent = TerranTechTree(
     state_schema=SomeState,
     impl=[
-        ("start", start),
-        ("path_choice", path_choice),
-        ("encounter_guardian", encounter_guardian),
-        ("puzzle_room", puzzle_room),
-        ("hidden_path", hidden_path),
-        ("ai_companion", ai_companion),
-        ("betrayal_check", betrayal_check),
-        ("meta_anomaly", meta_anomaly),
-        ("final_gate", final_gate),
-        ("end", end),
-        ("user_input", user_input),
-        ("puzzle_success", puzzle_success),
+        ("CommandCenter", CommandCenter),
+        ("SupplyDepot", SupplyDepot),
+        ("Refinery", Refinery),
+        ("Barracks", Barracks),
+        ("EngineeringBay", EngineeringBay),
+        ("Academy", Academy),
+        ("Factory", Factory),
+        ("Armory", Armory),
+        ("Starport", Starport),
+        ("ScienceFacility", ScienceFacility),
+        ("FusionCore", FusionCore),
+        ("GhostAcademy", GhostAcademy),
+        ("Bunker", Bunker),
+        ("MissileTurret", MissileTurret),
+        ("SensorTower", SensorTower),
+        ("TechLabBarracks", TechLabBarracks),
+        ("ReactorBarracks", ReactorBarracks),
+        ("TechLabFactory", TechLabFactory),
+        ("ReactorFactory", ReactorFactory),
+        ("TechLabStarport", TechLabStarport),
+        ("ReactorStarport", ReactorStarport),
     ]
 )
 
@@ -129,7 +205,7 @@ from langgraph.constants import START, END  # noqa: F401
 from langgraph.graph import StateGraph
 
 
-def DigitalWorldExploration(
+def TerranTechTree(
     *,
     state_schema: Optional[Type[Any]] = None,
     config_schema: Optional[Type[Any]] = None,
@@ -137,7 +213,7 @@ def DigitalWorldExploration(
     output: Optional[Type[Any]] = None,
     impl: list[tuple[str, Callable]],
 ) -> StateGraph:
-    """Create the state graph for DigitalWorldExploration."""
+    """Create the state graph for TerranTechTree."""
     # Declare the state graph
     builder = StateGraph(
         state_schema, config_schema=config_schema, input=input, output=output
@@ -148,18 +224,27 @@ def DigitalWorldExploration(
     all_names = set(nodes_by_name)
 
     expected_implementations = {
-        "start",
-        "path_choice",
-        "encounter_guardian",
-        "puzzle_room",
-        "hidden_path",
-        "ai_companion",
-        "betrayal_check",
-        "meta_anomaly",
-        "final_gate",
-        "end",
-        "user_input",
-        "puzzle_success",
+        "CommandCenter",
+        "SupplyDepot",
+        "Refinery",
+        "Barracks",
+        "EngineeringBay",
+        "Academy",
+        "Factory",
+        "Armory",
+        "Starport",
+        "ScienceFacility",
+        "FusionCore",
+        "GhostAcademy",
+        "Bunker",
+        "MissileTurret",
+        "SensorTower",
+        "TechLabBarracks",
+        "ReactorBarracks",
+        "TechLabFactory",
+        "ReactorFactory",
+        "TechLabStarport",
+        "ReactorStarport",
     }
 
     missing_nodes = expected_implementations - all_names
@@ -174,41 +259,50 @@ def DigitalWorldExploration(
         )
 
     # Add nodes
-    builder.add_node("start", nodes_by_name["start"])
-    builder.add_node("path_choice", nodes_by_name["path_choice"])
-    builder.add_node("encounter_guardian", nodes_by_name["encounter_guardian"])
-    builder.add_node("puzzle_room", nodes_by_name["puzzle_room"])
-    builder.add_node("hidden_path", nodes_by_name["hidden_path"])
-    builder.add_node("ai_companion", nodes_by_name["ai_companion"])
-    builder.add_node("betrayal_check", nodes_by_name["betrayal_check"])
-    builder.add_node("meta_anomaly", nodes_by_name["meta_anomaly"])
-    builder.add_node("final_gate", nodes_by_name["final_gate"])
-    builder.add_node("end", nodes_by_name["end"])
+    builder.add_node("CommandCenter", nodes_by_name["CommandCenter"])
+    builder.add_node("SupplyDepot", nodes_by_name["SupplyDepot"])
+    builder.add_node("Refinery", nodes_by_name["Refinery"])
+    builder.add_node("Barracks", nodes_by_name["Barracks"])
+    builder.add_node("EngineeringBay", nodes_by_name["EngineeringBay"])
+    builder.add_node("Academy", nodes_by_name["Academy"])
+    builder.add_node("Factory", nodes_by_name["Factory"])
+    builder.add_node("Armory", nodes_by_name["Armory"])
+    builder.add_node("Starport", nodes_by_name["Starport"])
+    builder.add_node("ScienceFacility", nodes_by_name["ScienceFacility"])
+    builder.add_node("FusionCore", nodes_by_name["FusionCore"])
+    builder.add_node("GhostAcademy", nodes_by_name["GhostAcademy"])
+    builder.add_node("Bunker", nodes_by_name["Bunker"])
+    builder.add_node("MissileTurret", nodes_by_name["MissileTurret"])
+    builder.add_node("SensorTower", nodes_by_name["SensorTower"])
+    builder.add_node("TechLabBarracks", nodes_by_name["TechLabBarracks"])
+    builder.add_node("ReactorBarracks", nodes_by_name["ReactorBarracks"])
+    builder.add_node("TechLabFactory", nodes_by_name["TechLabFactory"])
+    builder.add_node("ReactorFactory", nodes_by_name["ReactorFactory"])
+    builder.add_node("TechLabStarport", nodes_by_name["TechLabStarport"])
+    builder.add_node("ReactorStarport", nodes_by_name["ReactorStarport"])
 
     # Add edges
-    builder.add_edge(START, "start")
-    builder.add_edge("start", "path_choice")
-    builder.add_conditional_edges(
-        "path_choice",
-        nodes_by_name["user_input"],
-        [
-            "encounter_guardian",
-            "hidden_path",
-            "puzzle_room",
-        ],
-    )
-    builder.add_edge("encounter_guardian", "puzzle_room")
-    builder.add_conditional_edges(
-        "puzzle_room",
-        nodes_by_name["puzzle_success"],
-        [
-            "hidden_path",
-            "puzzle_room",
-        ],
-    )
-    builder.add_edge("hidden_path", "ai_companion")
-    builder.add_edge("ai_companion", "betrayal_check")
-    builder.add_edge("betrayal_check", "meta_anomaly")
-    builder.add_edge("meta_anomaly", "final_gate")
-    builder.add_edge("final_gate", END)
+    builder.add_edge(START, "CommandCenter")
+    builder.add_edge("CommandCenter", "SupplyDepot")
+    builder.add_edge("CommandCenter", "Refinery")
+    builder.add_edge("SupplyDepot", "Barracks")
+    builder.add_edge("Barracks", "EngineeringBay")
+    builder.add_edge("Barracks", "Academy")
+    builder.add_edge("Barracks", "Factory")
+    builder.add_edge("Factory", "Armory")
+    builder.add_edge("Factory", "Starport")
+    builder.add_edge("Starport", "ScienceFacility")
+    builder.add_edge("ScienceFacility", "FusionCore")
+    builder.add_edge("Barracks", "GhostAcademy")
+    builder.add_edge("Barracks", "Bunker")
+    builder.add_edge("EngineeringBay", "MissileTurret")
+    builder.add_edge("EngineeringBay", "SensorTower")
+    builder.add_edge("Barracks", "TechLabBarracks")
+    builder.add_edge("Barracks", "ReactorBarracks")
+    builder.add_edge("Factory", "TechLabFactory")
+    builder.add_edge("Factory", "ReactorFactory")
+    builder.add_edge("Starport", "TechLabStarport")
+    builder.add_edge("Starport", "ReactorStarport")
+    builder.add_edge("FusionCore", END)
+    builder.set_entry_point("CommandCenter")
     return builder

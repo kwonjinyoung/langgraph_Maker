@@ -7,7 +7,7 @@ Replace the placeholder implementation with your own logic.
 
 from typing_extensions import TypedDict
 
-from response import DigitalWorldExploration
+from response import TerranTechTree
 
 
 class SomeState(TypedDict):
@@ -16,104 +16,180 @@ class SomeState(TypedDict):
 
 
 # Define stand-alone functions
-def start(state: SomeState) -> dict:
-    print("In node: start")
+def CommandCenter(state: SomeState) -> dict:
+    print("In node: CommandCenter")
     return {
         # Add your state update logic here
     }
 
 
-def path_choice(state: SomeState) -> dict:
-    print("In node: path_choice")
+def SupplyDepot(state: SomeState) -> dict:
+    print("In node: SupplyDepot")
     return {
         # Add your state update logic here
     }
 
 
-def encounter_guardian(state: SomeState) -> dict:
-    print("In node: encounter_guardian")
+def Refinery(state: SomeState) -> dict:
+    print("In node: Refinery")
     return {
         # Add your state update logic here
     }
 
 
-def puzzle_room(state: SomeState) -> dict:
-    print("In node: puzzle_room")
+def Barracks(state: SomeState) -> dict:
+    print("In node: Barracks")
     return {
         # Add your state update logic here
     }
 
 
-def hidden_path(state: SomeState) -> dict:
-    print("In node: hidden_path")
+def EngineeringBay(state: SomeState) -> dict:
+    print("In node: EngineeringBay")
     return {
         # Add your state update logic here
     }
 
 
-def ai_companion(state: SomeState) -> dict:
-    print("In node: ai_companion")
+def Academy(state: SomeState) -> dict:
+    print("In node: Academy")
     return {
         # Add your state update logic here
     }
 
 
-def betrayal_check(state: SomeState) -> dict:
-    print("In node: betrayal_check")
+def Factory(state: SomeState) -> dict:
+    print("In node: Factory")
     return {
         # Add your state update logic here
     }
 
 
-def meta_anomaly(state: SomeState) -> dict:
-    print("In node: meta_anomaly")
+def Armory(state: SomeState) -> dict:
+    print("In node: Armory")
     return {
         # Add your state update logic here
     }
 
 
-def final_gate(state: SomeState) -> dict:
-    print("In node: final_gate")
+def Starport(state: SomeState) -> dict:
+    print("In node: Starport")
     return {
         # Add your state update logic here
     }
 
 
-def end(state: SomeState) -> dict:
-    print("In node: end")
+def ScienceFacility(state: SomeState) -> dict:
+    print("In node: ScienceFacility")
     return {
         # Add your state update logic here
     }
 
 
-def user_input(state: SomeState) -> str:
-    print("In condition: user_input")
-    #raise NotImplementedError("Implement me.")
-    return "left"
-
-def puzzle_success(state: SomeState) -> str:
-    print("In condition: puzzle_success")
-    raise NotImplementedError("Implement me.")
+def FusionCore(state: SomeState) -> dict:
+    print("In node: FusionCore")
+    return {
+        # Add your state update logic here
+    }
 
 
-agent = DigitalWorldExploration(
+def GhostAcademy(state: SomeState) -> dict:
+    print("In node: GhostAcademy")
+    return {
+        # Add your state update logic here
+    }
+
+
+def Bunker(state: SomeState) -> dict:
+    print("In node: Bunker")
+    return {
+        # Add your state update logic here
+    }
+
+
+def MissileTurret(state: SomeState) -> dict:
+    print("In node: MissileTurret")
+    return {
+        # Add your state update logic here
+    }
+
+
+def SensorTower(state: SomeState) -> dict:
+    print("In node: SensorTower")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabBarracks(state: SomeState) -> dict:
+    print("In node: TechLabBarracks")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorBarracks(state: SomeState) -> dict:
+    print("In node: ReactorBarracks")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabFactory(state: SomeState) -> dict:
+    print("In node: TechLabFactory")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorFactory(state: SomeState) -> dict:
+    print("In node: ReactorFactory")
+    return {
+        # Add your state update logic here
+    }
+
+
+def TechLabStarport(state: SomeState) -> dict:
+    print("In node: TechLabStarport")
+    return {
+        # Add your state update logic here
+    }
+
+
+def ReactorStarport(state: SomeState) -> dict:
+    print("In node: ReactorStarport")
+    return {
+        # Add your state update logic here
+    }
+
+
+agent = TerranTechTree(
     state_schema=SomeState,
     impl=[
-        ("start", start),
-        ("path_choice", path_choice),
-        ("encounter_guardian", encounter_guardian),
-        ("puzzle_room", puzzle_room),
-        ("hidden_path", hidden_path),
-        ("ai_companion", ai_companion),
-        ("betrayal_check", betrayal_check),
-        ("meta_anomaly", meta_anomaly),
-        ("final_gate", final_gate),
-        ("end", end),
-        ("user_input", user_input),
-        ("puzzle_success", puzzle_success),
+        ("CommandCenter", CommandCenter),
+        ("SupplyDepot", SupplyDepot),
+        ("Refinery", Refinery),
+        ("Barracks", Barracks),
+        ("EngineeringBay", EngineeringBay),
+        ("Academy", Academy),
+        ("Factory", Factory),
+        ("Armory", Armory),
+        ("Starport", Starport),
+        ("ScienceFacility", ScienceFacility),
+        ("FusionCore", FusionCore),
+        ("GhostAcademy", GhostAcademy),
+        ("Bunker", Bunker),
+        ("MissileTurret", MissileTurret),
+        ("SensorTower", SensorTower),
+        ("TechLabBarracks", TechLabBarracks),
+        ("ReactorBarracks", ReactorBarracks),
+        ("TechLabFactory", TechLabFactory),
+        ("ReactorFactory", ReactorFactory),
+        ("TechLabStarport", TechLabStarport),
+        ("ReactorStarport", ReactorStarport),
     ],
 )
 
 compiled_agent = agent.compile()
 
-#print(compiled_agent.invoke({"foo": "bar"}))
+print(compiled_agent.invoke({"foo": "bar"}))

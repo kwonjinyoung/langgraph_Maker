@@ -1,40 +1,69 @@
-name: DigitalWorldExploration
+name: TerranTechTree
 nodes:
-  - name: start
-  - name: path_choice
-  - name: encounter_guardian
-  - name: puzzle_room
-  - name: hidden_path
-  - name: ai_companion
-  - name: betrayal_check
-  - name: meta_anomaly
-  - name: final_gate
-  - name: end
+  - name: CommandCenter
+  - name: SupplyDepot
+  - name: Refinery
+  - name: Barracks
+  - name: EngineeringBay
+  - name: Academy
+  - name: Factory
+  - name: Armory
+  - name: Starport
+  - name: ScienceFacility
+  - name: FusionCore
+  - name: GhostAcademy
+  - name: Bunker
+  - name: MissileTurret
+  - name: SensorTower
+  - name: TechLabBarracks
+  - name: ReactorBarracks
+  - name: TechLabFactory
+  - name: ReactorFactory
+  - name: TechLabStarport
+  - name: ReactorStarport
 edges:
   - from: __start__
-    to: start
-  - from: start
-    to: path_choice
-  - from: path_choice
-    condition: user_input
-    paths:
-      - encounter_guardian
-      - hidden_path
-      - puzzle_room
-  - from: encounter_guardian
-    to: puzzle_room
-  - from: puzzle_room
-    condition: puzzle_success
-    paths:
-      - hidden_path
-      - puzzle_room
-  - from: hidden_path
-    to: ai_companion
-  - from: ai_companion
-    to: betrayal_check
-  - from: betrayal_check
-    to: meta_anomaly
-  - from: meta_anomaly
-    to: final_gate
-  - from: final_gate
+    to: CommandCenter
+  - from: CommandCenter
+    to: SupplyDepot
+  - from: CommandCenter
+    to: Refinery
+  - from: SupplyDepot
+    to: Barracks
+  - from: Barracks
+    to: EngineeringBay
+  - from: Barracks
+    to: Academy
+  - from: Barracks
+    to: Factory
+  - from: Factory
+    to: Armory
+  - from: Factory
+    to: Starport
+  - from: Starport
+    to: ScienceFacility
+  - from: ScienceFacility
+    to: FusionCore
+  - from: Barracks
+    to: GhostAcademy
+  - from: Barracks
+    to: Bunker
+  - from: EngineeringBay
+    to: MissileTurret
+  - from: EngineeringBay
+    to: SensorTower
+  - from: Barracks
+    to: TechLabBarracks
+  - from: Barracks
+    to: ReactorBarracks
+  - from: Factory
+    to: TechLabFactory
+  - from: Factory
+    to: ReactorFactory
+  - from: Starport
+    to: TechLabStarport
+  - from: Starport
+    to: ReactorStarport
+  - from: FusionCore
     to: __end__
+entrypoint: CommandCenter
