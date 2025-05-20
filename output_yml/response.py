@@ -13,78 +13,90 @@ Below is a sample implementation of the generated stub:
 ```python
 from typing_extensions import TypedDict
 
-from response import ProtossBuildingWorkflow
+from response import PermissionInfoRetrieval
 
 class SomeState(TypedDict):
     # define your attributes here
     foo: str
 
 # Define stand-alone functions
-def nexus(state: SomeState) -> dict:
-    print("In node: nexus")
+def check_vectorstore(state: SomeState) -> dict:
+    print("In node: check_vectorstore")
     return {
         # Add your state update logic here
     }
 
 
-def pylon(state: SomeState) -> dict:
-    print("In node: pylon")
+def process_vectorstore_result(state: SomeState) -> dict:
+    print("In node: process_vectorstore_result")
     return {
         # Add your state update logic here
     }
 
 
-def assimilator(state: SomeState) -> dict:
-    print("In node: assimilator")
+def extract_keywords(state: SomeState) -> dict:
+    print("In node: extract_keywords")
     return {
         # Add your state update logic here
     }
 
 
-def gateway(state: SomeState) -> dict:
-    print("In node: gateway")
+def search_confluence(state: SomeState) -> dict:
+    print("In node: search_confluence")
     return {
         # Add your state update logic here
     }
 
 
-def cybernetics_core(state: SomeState) -> dict:
-    print("In node: cybernetics_core")
+def analyze_confluence_result(state: SomeState) -> dict:
+    print("In node: analyze_confluence_result")
     return {
         # Add your state update logic here
     }
 
 
-def twilight_council(state: SomeState) -> dict:
-    print("In node: twilight_council")
+def generate_rag_response(state: SomeState) -> dict:
+    print("In node: generate_rag_response")
     return {
         # Add your state update logic here
     }
 
 
-def robotics_facility(state: SomeState) -> dict:
-    print("In node: robotics_facility")
+def retry_with_alternate_keywords(state: SomeState) -> dict:
+    print("In node: retry_with_alternate_keywords")
     return {
         # Add your state update logic here
     }
 
 
-def has_cybernetics_core(state: SomeState) -> str:
-    print("In condition: has_cybernetics_core")
+def is_sufficient(state: SomeState) -> str:
+    print("In condition: is_sufficient")
     raise NotImplementedError("Implement me.")
 
 
-agent = ProtossBuildingWorkflow(
+def is_sufficient(state: SomeState) -> str:
+    print("In condition: is_sufficient")
+    raise NotImplementedError("Implement me.")
+
+
+def retry_limit_exceeded(state: SomeState) -> str:
+    print("In condition: retry_limit_exceeded")
+    raise NotImplementedError("Implement me.")
+
+
+agent = PermissionInfoRetrieval(
     state_schema=SomeState,
     impl=[
-        ("nexus", nexus),
-        ("pylon", pylon),
-        ("assimilator", assimilator),
-        ("gateway", gateway),
-        ("cybernetics_core", cybernetics_core),
-        ("twilight_council", twilight_council),
-        ("robotics_facility", robotics_facility),
-        ("has_cybernetics_core", has_cybernetics_core),
+        ("check_vectorstore", check_vectorstore),
+        ("process_vectorstore_result", process_vectorstore_result),
+        ("extract_keywords", extract_keywords),
+        ("search_confluence", search_confluence),
+        ("analyze_confluence_result", analyze_confluence_result),
+        ("generate_rag_response", generate_rag_response),
+        ("retry_with_alternate_keywords", retry_with_alternate_keywords),
+        ("is_sufficient", is_sufficient),
+        ("is_sufficient", is_sufficient),
+        ("retry_limit_exceeded", retry_limit_exceeded),
     ]
 )
 
@@ -99,7 +111,7 @@ from langgraph.constants import START, END  # noqa: F401
 from langgraph.graph import StateGraph
 
 
-def ProtossBuildingWorkflow(
+def PermissionInfoRetrieval(
     *,
     state_schema: Optional[Type[Any]] = None,
     config_schema: Optional[Type[Any]] = None,
@@ -107,7 +119,7 @@ def ProtossBuildingWorkflow(
     output: Optional[Type[Any]] = None,
     impl: list[tuple[str, Callable]],
 ) -> StateGraph:
-    """Create the state graph for ProtossBuildingWorkflow."""
+    """Create the state graph for PermissionInfoRetrieval."""
     # Declare the state graph
     builder = StateGraph(
         state_schema, config_schema=config_schema, input=input, output=output
@@ -118,14 +130,16 @@ def ProtossBuildingWorkflow(
     all_names = set(nodes_by_name)
 
     expected_implementations = {
-        "nexus",
-        "pylon",
-        "assimilator",
-        "gateway",
-        "cybernetics_core",
-        "twilight_council",
-        "robotics_facility",
-        "has_cybernetics_core",
+        "check_vectorstore",
+        "process_vectorstore_result",
+        "extract_keywords",
+        "search_confluence",
+        "analyze_confluence_result",
+        "generate_rag_response",
+        "retry_with_alternate_keywords",
+        "is_sufficient",
+        "is_sufficient",
+        "retry_limit_exceeded",
     }
 
     missing_nodes = expected_implementations - all_names
@@ -140,28 +154,42 @@ def ProtossBuildingWorkflow(
         )
 
     # Add nodes
-    builder.add_node("nexus", nodes_by_name["nexus"])
-    builder.add_node("pylon", nodes_by_name["pylon"])
-    builder.add_node("assimilator", nodes_by_name["assimilator"])
-    builder.add_node("gateway", nodes_by_name["gateway"])
-    builder.add_node("cybernetics_core", nodes_by_name["cybernetics_core"])
-    builder.add_node("twilight_council", nodes_by_name["twilight_council"])
-    builder.add_node("robotics_facility", nodes_by_name["robotics_facility"])
+    builder.add_node("check_vectorstore", nodes_by_name["check_vectorstore"])
+    builder.add_node("process_vectorstore_result", nodes_by_name["process_vectorstore_result"])
+    builder.add_node("extract_keywords", nodes_by_name["extract_keywords"])
+    builder.add_node("search_confluence", nodes_by_name["search_confluence"])
+    builder.add_node("analyze_confluence_result", nodes_by_name["analyze_confluence_result"])
+    builder.add_node("generate_rag_response", nodes_by_name["generate_rag_response"])
+    builder.add_node("retry_with_alternate_keywords", nodes_by_name["retry_with_alternate_keywords"])
 
     # Add edges
-    builder.add_edge(START, "nexus")
-    builder.add_edge("nexus", "pylon")
-    builder.add_edge("pylon", "assimilator")
-    builder.add_edge("assimilator", "gateway")
+    builder.add_edge(START, "check_vectorstore")
+    builder.add_edge("check_vectorstore", "process_vectorstore_result")
     builder.add_conditional_edges(
-        "gateway",
-        nodes_by_name["has_cybernetics_core"],
+        "process_vectorstore_result",
+        nodes_by_name["is_sufficient"],
         [
-            "cybernetics_core",
-            "twilight_council",
+            "generate_rag_response",
+            "extract_keywords",
         ],
     )
-    builder.add_edge("cybernetics_core", "robotics_facility")
-    builder.add_edge("twilight_council", END)
-    builder.add_edge("robotics_facility", END)
+    builder.add_edge("extract_keywords", "search_confluence")
+    builder.add_edge("search_confluence", "analyze_confluence_result")
+    builder.add_conditional_edges(
+        "analyze_confluence_result",
+        nodes_by_name["is_sufficient"],
+        [
+            "generate_rag_response",
+            "retry_with_alternate_keywords",
+        ],
+    )
+    builder.add_conditional_edges(
+        "retry_with_alternate_keywords",
+        nodes_by_name["retry_limit_exceeded"],
+        [
+            "search_confluence",
+            END,
+        ],
+    )
+    builder.add_edge("generate_rag_response", END)
     return builder

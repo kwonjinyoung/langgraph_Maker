@@ -1,29 +1,35 @@
-name: ProtossBuildingWorkflow
+name: PermissionInfoRetrieval
 nodes:
-  - name: nexus
-  - name: pylon
-  - name: assimilator
-  - name: gateway
-  - name: cybernetics_core
-  - name: twilight_council
-  - name: robotics_facility
+  - name: check_vectorstore
+  - name: process_vectorstore_result
+  - name: extract_keywords
+  - name: search_confluence
+  - name: analyze_confluence_result
+  - name: generate_rag_response
+  - name: retry_with_alternate_keywords
 edges:
   - from: __start__
-    to: nexus
-  - from: nexus
-    to: pylon
-  - from: pylon
-    to: assimilator
-  - from: assimilator
-    to: gateway
-  - from: gateway
-    condition: has_cybernetics_core
+    to: check_vectorstore
+  - from: check_vectorstore
+    to: process_vectorstore_result
+  - from: process_vectorstore_result
+    condition: is_sufficient
     paths:
-      - cybernetics_core
-      - twilight_council
-  - from: cybernetics_core
-    to: robotics_facility
-  - from: twilight_council
-    to: __end__
-  - from: robotics_facility
+      - generate_rag_response
+      - extract_keywords
+  - from: extract_keywords
+    to: search_confluence
+  - from: search_confluence
+    to: analyze_confluence_result
+  - from: analyze_confluence_result
+    condition: is_sufficient
+    paths:
+      - generate_rag_response
+      - retry_with_alternate_keywords
+  - from: retry_with_alternate_keywords
+    condition: retry_limit_exceeded
+    paths:
+      - search_confluence
+      - __end__
+  - from: generate_rag_response
     to: __end__
